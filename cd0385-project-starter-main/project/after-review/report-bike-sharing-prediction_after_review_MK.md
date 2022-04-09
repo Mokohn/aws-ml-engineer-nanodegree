@@ -33,11 +33,11 @@ Additionally, I would try some other models and see how they perform, just to ha
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
 
-![model_train_score.png](img/model_train_score.png)
+![model_train_score.png](../img/model_train_score.png)
 
 ### Create a line plot showing the top kaggle score for the three (or more) prediction submissions during the project.
 
-![model_test_score.png](img/model_test_score.png)
+![model_test_score.png](../img/model_test_score.png)
 
 ## Summary
 This project was a perfect example for how model performance can be optimized with EDA (feature engineering) and hyperparameter optimization. Especially hyperparameter optimization is crucial for finetuning a model and to get the last bit of performance out of it.
