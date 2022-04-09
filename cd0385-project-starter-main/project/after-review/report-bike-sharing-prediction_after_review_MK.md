@@ -24,11 +24,12 @@ I would definitely focus on optimizing hyperparameters more, because this can be
 Additionally, I would try some other models and see how they perform, just to have some results to compare to.
 
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
-|model|hpo1|hpo2|hpo3|score|
-	  |--|--|--|--|--|
-|initial|?|?|?|?|
-|add_features|?|?|?|?|
-|hpo|?|?|?|?|
+
+| model         |learning_rate|num_epochs|max_depth|score|
+|---------------|----|----|----|-----|
+| initial       |0.001|0.001|0.001|1.34025|
+| add_features  |10|10|10|0.52779|
+| hpo           |5|5|5|0.69743|
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
 
@@ -40,4 +41,4 @@ Additionally, I would try some other models and see how they perform, just to ha
 
 ## Summary
 This project was a perfect example for how model performance can be optimized with EDA (feature engineering) and hyperparameter optimization. Especially hyperparameter optimization is crucial for finetuning a model and to get the last bit of performance out of it.
-One point I didn't get was the table for the hyperparameters per model. I don't know to which three hps you are referring, maybe the ones used when optimizing a tree-based model specifically? 
+Hyperparameter optimization will normally take much more time, but in this case only one state of three hyperparameters was used.
