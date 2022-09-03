@@ -9,16 +9,17 @@ def lambda_handler(event, context):
     inferences = event['inferences']
 
     # Check if any values in our inferences are above THRESHOLD
-    meets_threshold = inferences > THRESHOLD
+    for inference in inferences:
+        meets_threshold = inference > THRESHOLD
 
-    # If our threshold is met, pass our data back out of the
-    # Step Function, else, end the Step Function with an error
-    if meets_threshold:
-        pass
-    else:
-        raise Exception("THRESHOLD_CONFIDENCE_NOT_MET")
+        # If our threshold is met, pass our data back out of the
+        # Step Function, else, end the Step Function with an error
+        if meets_threshold:
+            pass
+        else:
+            raise Exception(f"THRESHOLD_CONFIDENCE_NOT_MET, INFERENCES {inferences}")
 
-    return {
-        'statusCode': 200,
-        'body': json.dumps(event)
-    }
+        return {
+            'statusCode': 200,
+            'body': json.dumps(event)
+        }
