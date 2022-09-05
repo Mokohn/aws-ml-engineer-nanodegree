@@ -85,7 +85,7 @@ def train(model, train_loader, validation_loader, criterion, optimizer, device):
                 else:
                     loss_counter += 1
 
-        if loss_counter == 1:
+        if loss_counter == 1:  # if loss is better than best_loss variable
             break
     return model
 
