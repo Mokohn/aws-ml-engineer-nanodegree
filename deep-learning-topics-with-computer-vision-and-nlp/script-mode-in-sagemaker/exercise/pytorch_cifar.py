@@ -10,12 +10,13 @@ class Net(nn.Module):
     def __init__(self):
         # TODO: Complete this function
         super(Net, self).__init__()
-        self.conv1 = nn.Conv2d(1, 32, 3, 1)
+        self.conv1 = nn.Conv2d(1, 32, 3, 1)  # in_channels, out_channels, kernel_size, stride
         self.conv2 = nn.Conv2d(32, 64, 3, 1)
         self.dropout1 = nn.Dropout(0.25)
         self.dropout2 = nn.Dropout(0.5)
-        self.fc1 = nn.Linear(9216, 128)
+        self.fc1 = nn.Linear(576, 128)
         self.fc2 = nn.Linear(128, 10)
+        
 
     def forward(self, x):
         # TODO: Complete the forward function
@@ -110,7 +111,7 @@ def main():
 
     # TODO: Add the CIFAR10 dataset and create your data loaders
     dataset1 = datasets.CIFAR10("../data", train=True, download=True, transform=transform)
-    dataset2 = datasets.CIFAR10("../data", train=False, download=True, transform=transform)
+    dataset2 = datasets.CIFAR10("../data", train=False, transform=transform)
     train_loader = torch.utils.data.DataLoader(dataset1, **train_kwargs)
     test_loader = torch.utils.data.DataLoader(dataset2, **test_kwargs)
 
